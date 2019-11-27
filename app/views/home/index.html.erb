@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<body background="/assets/image.jpg">
+	  
+	<h1 style="background-color: initial;">Welcome Admin</h1>
+	
+	
+
+
+	<% if current_user && current_user.role == "Admin" %>
+
+	<ul>
+
+		<li><%= link_to "Create Employee", signup_path %></li>
+		<li><%= link_to "View Employee", users_path%></li>
+	</ul>
+		
+
+
+
+	<%elsif current_user && current_user.role == "Emplpyee"%>
+
+
+
+		<table border="1" id="table">
+		<tr>
+		<th>name</th>
+
+		<td><%= current_user.first_name%></td>
+		</tr>
+		<tr>
+		<th>last name</th>
+		<td><%= current_user.last_name%></td>
+		</tr>
+		<tr>
+		<th>age</th>
+		<td><%= current_user.date_of_birth%></td>	
+		</tr>
+		<tr>
+		<th>date_of_joining</th>
+		<td><%= current_user.date_of_joining%></td>
+		</tr>
+		<tr>
+		<th>Salary_per_annum</th>
+		<td><%= current_user.salary_per_annum%></td>
+		</tr>
+		<tr>
+		<th>Salary_per_month</th>
+		<td><%= current_user.salary_per_month%></td>
+		</tr>
+		<tr>
+		<th>email</th>
+		<td><%= current_user.email%></td>
+		</tr>
+		<tr>
+		<th>address</th>
+		<td><%= current_user.addrress%></td>
+		</tr>
+		<tr>
+		<th>Mobile</th>
+		<td><%= current_user.mobile%></td>
+		</tr>
+		<tr>
+		<th>Blood_type</th>
+		<td><%= current_user.blood_type%></td>
+		</tr>
+		<tr>
+		<th>Emergency_contact_name</th>
+		<td><%= current_user.emergency_contact_name%></td>
+		</tr>
+		<tr>
+		<th>Emergency_contact_number</th>
+		<td><%= current_user.emergency_contact_number%></td>
+		</tr>
+		<tr>
+		<th>Primary_skill</th>
+		<td><%= current_user.primary_skill%></td>
+		</tr>
+		<tr>
+		<th>Secondary_skill1</th>
+		<td><%= current_user.secondary_skill_1%></td>
+		</tr>
+		<tr>
+		<th>Secondary_skill2</th>
+		<td><%= current_user.secondary_skill_2%></td>
+		</tr>
+
+		</table>
+
+
+	<%end%>
+
+	<div class="content"> 
+
+	
+
+<!-- Use a button to pause/play the video with JavaScript -->
+
+</div>
+
+
+
+
+<!-- Optional: some overlay text to describe the video -->
+
+
+
+
+<ul><li><%= link_to "Log Out",logout_path %></li></ul>
+
+<p id="notice"><%= notice %></p>
+
+
+</body>
+</html>
+
+
+
+
+

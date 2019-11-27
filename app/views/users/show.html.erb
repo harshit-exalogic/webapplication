@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body background="/assets/image.jpg">
+
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<form>
+	<fieldset>
+
+	<legend><h1>Details</h1></legend>
+
+	<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+
+
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>date_of_birth</strong>
+  <%= @user.date_of_birth%>
+</p>
+
+<p>
+  <strong>date_of_joining:</strong>
+  <%= @user.date_of_joining %>
+</p>
+
+<p>
+  <strong>salary_per_annum:</strong>
+  <%= @user.salary_per_annum%>
+</p>
+
+<p>
+  <strong>salary_per_month:</strong>
+  <%= @user.salary_per_month %>
+</p>
+
+<p>
+  <strong>address:</strong>
+  <%= @user.addrress%>
+</p>
+<p>
+  <strong>mobile:</strong>
+  <%= @user.mobile %>
+</p>
+
+
+<p>
+  <strong>blood_type:</strong>
+  <%= @user.blood_type %>
+</p>
+
+<p>
+  <strong>emergency_contact_name:</strong>
+  <%= @user.emergency_contact_name %>
+</p>
+
+<p>
+  <strong>emergency_contact_number:</strong>
+  <%= @user.emergency_contact_number %>
+</p>
+
+<p>
+  <strong>primary_skill:</strong>
+  <%= @user.primary_skill %>
+</p>
+
+<p>
+  <strong>secondary_skill_1:</strong>
+  <%= @user.secondary_skill_1 %>
+</p>
+
+<p>
+  <strong>secondary_skill_2:</strong>
+  <%= @user.secondary_skill_2 %>
+</p>
+
+<p>
+  <strong>notice_period_in_days:</strong>
+  <%= @user.notice_period_in_days %>
+</p>
+
+
+<p>
+  <strong>role:</strong>
+  <%= @user.role %>
+</p>
+
+
+
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> 
+<%= link_to 'Back', users_path %>
+
+</fieldset>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
