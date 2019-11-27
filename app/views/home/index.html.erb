@@ -6,6 +6,33 @@
 			 background: url(<%= asset_path 'image.jpg' %>);
   background-size: 100%;
 		}
+		  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #ccc;
+  text-align: center;
+  padding: 16px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 200px;
+ 
+
+}
+
+li a:hover {
+  background-color: black;
+}
 	</style>
 </head>
 
@@ -14,17 +41,20 @@
 
 <body>
 	  
-	<h1 style="background-color: initial;">Welcome Admin</h1>
+	
+	<br><br><br>
 	
 	
 
 
 	<% if current_user && current_user.role == "Admin" %>
+	<h1 style="background-color: initial;">Welcome Admin</h1>
 
 	<ul>
 
 		<li style="font-weight:bold; color: black;"><%= link_to "Create Employee", signup_path %></li>
 		<li style="font-weight:bold;"><%= link_to "View Employee", users_path%></li>
+		<li style="font-weight:bold; text-decoration: none;"><%= link_to "Log Out",logout_path %></li>
 	</ul>
 		
 
@@ -98,6 +128,8 @@
 		</tr>
 
 		</table>
+		<br>
+		<button><%= link_to "Log Out",logout_path %></button>
 
 
 	<%end%>
@@ -118,7 +150,7 @@
 
 
 
-<ul><li style="font-weight:bold; text-decoration: none;"><%= link_to "Log Out",logout_path %></li></ul>
+
 
 <p id="notice"><%= notice %></p>
 
