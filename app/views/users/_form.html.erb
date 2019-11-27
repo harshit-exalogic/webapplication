@@ -6,6 +6,8 @@
     background: url(<%= asset_path 'image.jpg' %>);
 background-size: 200%;
    }
+
+
  </style>
 </head>
 <body >
@@ -31,15 +33,17 @@ background-size: 200%;
       </ul>
     </div>
   <% end %>
+   
 
+  
   <div class="field">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= form.text_field :first_name,{:pattern=>'[A-Za-z]'} %>
   </div>
 
   <div class="field">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.text_field :last_name ,{:pattern=>'[A-Za-z]'}%>
   </div>
 
   <div class="field">
@@ -54,12 +58,12 @@ background-size: 200%;
 
   <div class="field">
     <%= form.label :salary_per_annum %>
-    <%= form.number_field :salary_per_annum%>
+    <%= form.number_field :salary_per_annum ,{:min =>'0'}%>
   </div>
 
   <div class="field">
     <%= form.label :salary_per_month %>
-    <%= form.number_field :salary_per_month %>
+    <%= form.number_field :salary_per_month,{:min =>'0'} %>
   </div>
 
   <div class="field">
@@ -67,16 +71,41 @@ background-size: 200%;
     <%= form.text_field :addrress %>
   </div>
 
+
+
+<div class="field">
+    <%= form.label :state %>
+    <%= form.select :state, [['State',nil],'Andaman and Nicobar Islands','Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chandigarh','  Chhattisgarh','Dadra and Nagar Haveli','Daman and Diu','Delhi','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu and Kashmir','Jharkhand','Karnataka','Kerala','Ladakh',
+      'Lakshadweep','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Puducherry','Punjab','Rajasthan','  Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pincode %>
+    <%= form.text_field :pincode ,{:minlength =>6, :maxlength => 6 }%>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.select :country,[['Country',nil],'India']%>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.select :gender,[['Gender',nil],'Male','Female','Other']%>
+  </div>
+
+
+
   <div class="field">
     <%= form.label :mobile %>
-    <%= form.text_field :mobile,{:placeholder => "Count", :class => "multiple_text_field form-control", :required => true, max: 13, min: 10 } %>
+    <%= form.text_field :mobile,{:minlength =>10, :maxlength => 13,:pattern=>'[0-9]' } %>
   </div>
 
   
 
   <div class="field">
     <%= form.label :blood_type %>
-    <%= form.select :blood_type,['A+','A-','B+','B-','AB+','AB-','O+','O-'] %>
+    <%= form.select :blood_type,[['Blood Type',nil],'A+','A-','B+','B-','AB+','AB-','O+','O-'] %>
   </div>
 
   <div class="field">
@@ -86,35 +115,38 @@ background-size: 200%;
 
   <div class="field">
     <%= form.label :emergency_contact_number %>
-    <%= form.text_field :emergency_contact_number %>
+    <%= form.text_field :emergency_contact_number,{:minlength =>10, :maxlength => 13,:pattern=>'[0-9]'} %>
   </div>
 
   <div class="field">
     <%= form.label :primary_skill %>
-    <%= form.text_field :primary_skill %>
+    <%= form.text_field :primary_skill ,{:pattern=>'[A-Za-z]'}%>
   </div>
 
   <div class="field">
     <%= form.label :secondary_skill_1 %>
-    <%= form.text_field :secondary_skill_1 %>
+    <%= form.text_field :secondary_skill_1,{:pattern=>'[A-Za-z]'} %>
   </div>
 
   <div class="field">
     <%= form.label :secondary_skill_2 %>
-    <%= form.text_field :secondary_skill_2 %>
+    <%= form.text_field :secondary_skill_2 ,{:pattern=>'[A-Za-z]'}%>
   </div>
 
   <div class="field">
     <%= form.label :notice_period_in_days %>
-    <%= form.number_field :notice_period_in_days %>
+    <%= form.number_field :notice_period_in_days,{:min =>'0'} %>
   </div>
 
 
   <div class="field">
     <%= form.label :role %>
-    <%= form.select :role,['Admin','Emplpyee'] %>
+    <%= form.select :role,[['Role',nil],'Admin','Emplpyee'],{:required=>'true'} %>
   </div>
 
+
+<tr>
+    <td colspan="4"><label><h3><b>LOGIN DETAILS</b></h3></label></td></tr>
 
 
   <div class="field">
@@ -135,7 +167,12 @@ background-size: 200%;
   <div class="actions">
     <%= form.submit %>
   </div>
+
+
+
+
   <%= link_to 'Home', root_path %>
+
 <% end %>
 
 

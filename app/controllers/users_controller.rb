@@ -72,7 +72,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :date_of_birth, :date_of_joining, :salary_per_annum, :salary_per_month, :addrress, :mobile, :blood_type, :emergency_contact_name, :emergency_contact_number, :primary_skill, :secondary_skill_1, :secondary_skill_2, :notice_period_in_days, :role, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :date_of_birth, :date_of_joining, :salary_per_annum, :salary_per_month, :addrress, :state,:pincode,:country,:gender, :mobile, :blood_type, :emergency_contact_name, :emergency_contact_number, :primary_skill, :secondary_skill_1, :secondary_skill_2, :notice_period_in_days, :role, :email, :password, :password_confirmation)
     end
 
     # def is_admin?
