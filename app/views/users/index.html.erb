@@ -4,6 +4,10 @@
 
 <head>
   <style>
+    body{
+       background: url(<%= asset_path 'image.jpg' %>);
+  background-size: 100%;
+    }
     ul {
   list-style-type: none;
   margin: 0;
@@ -31,45 +35,46 @@ li a:hover {
   background-color: black;
 }
 .myButton {
-   -webkit-border-radius: 5px;
-   -moz-border-radius: 5px;
-   border-radius: 5px;
-   color: #000000;
-   font-family: Arial;
-   font-size: 10px;
-   font-weight: 25;
-   padding: 10px;
-   background-color: #F6EEEA;
-   box-shadow: 1px 1px 20px 0px #000000;
-   -webkit-box-shadow: 1px 1px 20px 0px #000000;
-   -moz-box-shadow: 1px 1px 20px 0px #000000;
-   text-shadow: -100px -100px 100px #000000;
-   border: solid #337FED 1px;
-   text-decoration: none;
-   display: inline-block;
-   cursor: pointer;
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9) );
+  background:-moz-linear-gradient( center top, #f9f9f9 5%, #e9e9e9 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9');
+  background-color:#f9f9f9;
+  -webkit-border-top-left-radius:36px;
+  -moz-border-radius-topleft:36px;
+  border-top-left-radius:36px;
+  -webkit-border-top-right-radius:36px;
+  -moz-border-radius-topright:36px;
+  border-top-right-radius:36px;
+  -webkit-border-bottom-right-radius:36px;
+  -moz-border-radius-bottomright:36px;
+  border-bottom-right-radius:36px;
+  -webkit-border-bottom-left-radius:36px;
+  -moz-border-radius-bottomleft:36px;
+  border-bottom-left-radius:36px;
+  text-indent:-3.95px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  color:#0a090a;
+  font-family:Arial;
+  font-size:15px;
+  
+  font-style:italic;
+  height:36px;
+  line-height:36px;
+  width:79px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #ffffff;
 }
-
-.myButton:hover {
-   border: solid #337FED 1px;
-   background: #1E62D0;
-   background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
-   background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
-   background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
-   background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
-   background-image: linear-gradient(to bottom, #1E62D0, #3D94F6);
-   -webkit-border-radius: 20px;
-   -moz-border-radius: 20px;
-   border-radius: 20px;
-   text-decoration: none;
-}
-
 
 </style>
 </head>
 
 
-<body background="/assets/image.jpg">
+<body >
 
 
 <ul>
@@ -84,13 +89,14 @@ li a:hover {
 
 <p id="notice"><%= notice %></p>
 
-<fieldset style="border: 2px solid black; width: 1px ; text-align:center; margin-left: 320px; padding-left: 40px; padding-right: 40px; ">
+<fieldset style="border: 2px solid black; width: 1px ; text-align:center; margin-left: 240px; padding-left: 40px; padding-right: 40px; ">
   <legend><h1>List of users:</h1></legend>
 <head>
 <style>
 table, th, td {
   border: 1px solid black;
 }
+tbody {color:black; font-weight:bold;}
 </style>
 </head>
 
@@ -120,16 +126,6 @@ table, th, td {
 </table>
 
 <br>
-
-
-
-
-
-
-
-
-
-  
 
 </body>
 </html>

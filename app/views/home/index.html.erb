@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<style > 
+		body{
+			 background: url(<%= asset_path 'image.jpg' %>);
+  background-size: 100%;
+		}
+	</style>
+</head>
 
 
 
 
-<body background="/assets/image.jpg">
+<body>
 	  
 	<h1 style="background-color: initial;">Welcome Admin</h1>
 	
@@ -15,8 +23,8 @@
 
 	<ul>
 
-		<li><%= link_to "Create Employee", signup_path %></li>
-		<li><%= link_to "View Employee", users_path%></li>
+		<li style="font-weight:bold; color: black;"><%= link_to "Create Employee", signup_path %></li>
+		<li style="font-weight:bold;"><%= link_to "View Employee", users_path%></li>
 	</ul>
 		
 
@@ -110,7 +118,7 @@
 
 
 
-<ul><li><%= link_to "Log Out",logout_path %></li></ul>
+<ul><li style="font-weight:bold; text-decoration: none;"><%= link_to "Log Out",logout_path %></li></ul>
 
 <p id="notice"><%= notice %></p>
 
