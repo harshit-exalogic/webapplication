@@ -26,125 +26,169 @@ body{
 	  background: url(<%= asset_path 'image.jpg' %>);
   background-size: 200%;
 }
+
+table {
+  width:50%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: black;
+  color: white;
+}
+
 </style>
 </head>
 
+<table>
+	<table id="t01">
+	<tr>
+		<th></th>
+		<th> </th>
+	</tr>
+	<tr>
 
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>date_of_birth</strong>
-  <%= @user.date_of_birth%>
-</p>
-
-<p>
-  <strong>date_of_joining:</strong>
-  <%= @user.date_of_joining %>
-</p>
-
-<p>
-  <strong>salary_per_annum:</strong>
-  <%= @user.salary_per_annum%>
-</p>
-
-<p>
-  <strong>salary_per_month:</strong>
-  <%= @user.salary_per_month %>
-</p>
-
-<p>
-  <strong>address:</strong>
-  <%= @user.addrress%>
-</p>
-
-
-
-<p>
-  <strong>state:</strong>
-  <%= @user.state%>
-</p>
-<p>
-  <strong>pincode:</strong>
-  <%= @user.pincode%>
-</p>
-<p>
-  <strong>country:</strong>
-  <%= @user.country%>
-</p>
-<p>
-  <strong>gender:</strong>
-  <%= @user.gender%>
-</p>
+<td>
+  <strong>First name:</strong></td>
+  <td><%= @user.first_name %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Last name:</strong></td>
+  <td><%= @user.last_name %></td>
+</tr>
+<tr>
+<td>
+  <strong>date_of_birth</strong></td>
+  <td>
+  	<%= @user.date_of_birth%>
+</td></tr>
+<tr>
+<td>
+  <strong>date_of_joining:</strong></td>
+  <td><%= @user.date_of_joining %></td>
+</tr>
+<tr>
+<td>
+  <strong>salary_per_annum:</strong></td>
+  <td><%= @user.salary_per_annum%></td>
+</tr>
+<tr>
+<td>
+  <strong>salary_per_month:</strong></td>
+  <td><%= (@user.salary_per_annum/12).to_i%></td>
+</tr>
+<tr>
+<td>
+  <strong>address:</strong></td>
+  <td><%= @user.addrress%></td>
+</tr>
+<tr>
 
 
-
-
-<p>
-  <strong>mobile:</strong>
-  <%= @user.mobile %>
-</p>
-
-
-<p>
-  <strong>blood_type:</strong>
-  <%= @user.blood_type %>
-</p>
-
-<p>
-  <strong>emergency_contact_name:</strong>
-  <%= @user.emergency_contact_name %>
-</p>
-
-<p>
-  <strong>emergency_contact_number:</strong>
-  <%= @user.emergency_contact_number %>
-</p>
-
-<p>
-  <strong>primary_skill:</strong>
-  <%= @user.primary_skill %>
-</p>
-
-<p>
-  <strong>secondary_skill_1:</strong>
-  <%= @user.secondary_skill_1 %>
-</p>
-
-<p>
-  <strong>secondary_skill_2:</strong>
-  <%= @user.secondary_skill_2 %>
-</p>
-
-<p>
-  <strong>notice_period_in_days:</strong>
-  <%= @user.notice_period_in_days %>
-</p>
-
-
-<p>
-  <strong>role:</strong>
-  <%= @user.role %>
-</p>
+<td>
+  <strong>state:</strong></td>
+  <td><%= @user.state%></td>
+</tr>
+<tr>
+<td>
+  <strong>pincode:</strong></td>
+  <td><%= (@user.pincode).to_i%></td>
+</tr>
+<tr>
+	<td>
+  <strong>country:</strong></td>
+  <td><%= @user.country%></td>
+</tr>
+<tr>
+<td>
+  <strong>gender:</strong></td>
+  <td><%= @user.gender%></td>
+</tr>
+<tr>
 
 
 
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> 
-<%= link_to 'Back', users_path %>
+<td>
+  <strong>mobile:</strong></td>
+  <td><%= @user.mobile %></td>
+</tr>
+<tr>
+
+
+<td>
+  <strong>blood_type:</strong></td>
+  <td><%= @user.blood_type %></td>
+</tr>
+<tr>
+<td>
+  <strong>emergency_contact_name:</strong></td>
+  <td><%= @user.emergency_contact_name %></td>
+</tr>
+<tr>
+<td>
+  <strong>emergency_contact_number:</strong></td>
+  <td><%= @user.emergency_contact_number %></td>
+</tr>
+<tr>
+<td>
+  <strong>primary_skill:</strong></td>
+ <td> <%= @user.primary_skill %></td>
+</tr>
+<tr>
+
+
+<td>
+  <strong>secondary_skill_1:</strong></td>
+  <td><%= @user.secondary_skill_1 %></td>
+</tr>
+<tr>
+
+<td>
+  <strong>secondary_skill_2:</strong></td>
+ <td> <%= @user.secondary_skill_2 %></td>
+</tr>
+<tr>
+
+<td>
+  <strong>notice_period_in_days:</strong></td>
+  <td><%= @user.notice_period_in_days %></td>
+</tr>
+
+<tr>
+<td>
+  <strong>role:</strong></td>
+ <td> <%= @user.role %></td>
+</tr>
+
+
+
+<tr>
+<td>
+  <strong>Email:</strong></td>
+  <td><%= @user.email %></td>
+</tr>
+
+</table>
+
+<button><%= link_to 'Edit', edit_user_path(@user) %> </button>
+<button><%= link_to 'Back', users_path %></button>
 
 </fieldset>
 </form>

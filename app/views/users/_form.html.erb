@@ -48,7 +48,8 @@ background-size: 200%;
 
   <div class="field">
     <%= form.label :date_of_birth %>
-    <%= form.date_field :date_of_birth %>
+    <%= form.date_field :date_of_birth,{ :max => Date.today }%>
+   
   </div>
 
   <div class="field">
@@ -61,10 +62,7 @@ background-size: 200%;
     <%= form.number_field :salary_per_annum ,{:min =>'0'}%>
   </div>
 
-  <div class="field">
-    <%= form.label :salary_per_month %>
-    <%= form.number_field :salary_per_month,{:min =>'0'} %>
-  </div>
+  
 
   <div class="field">
     <%= form.label :address %>
@@ -81,7 +79,8 @@ background-size: 200%;
 
   <div class="field">
     <%= form.label :pincode %>
-    <%= form.text_field :pincode ,{:minlength =>6, :maxlength => 6 }%>
+    <%= form.text_field :pincode ,:minlength =>6, :maxlength => 6,
+    :pattern=>'\d*'%>
   </div>
 
   <div class="field">
@@ -98,7 +97,7 @@ background-size: 200%;
 
   <div class="field">
     <%= form.label :mobile %>
-    <%= form.text_field :mobile,{:minlength =>10, :maxlength => 13,:pattern=>'[0-9]' } %>
+    <%= form.text_field :mobile,:minlength =>10, :maxlength => 10, :pattern=>'\d*' %>
   </div>
 
   
@@ -115,7 +114,7 @@ background-size: 200%;
 
   <div class="field">
     <%= form.label :emergency_contact_number %>
-    <%= form.text_field :emergency_contact_number,{:minlength =>10, :maxlength => 13,:pattern=>'[0-9]'} %>
+    <%= form.text_field :emergency_contact_number,:minlength =>10, :maxlength => 10,:pattern=>'\d*' %>
   </div>
 
   <div class="field">
@@ -135,7 +134,7 @@ background-size: 200%;
 
   <div class="field">
     <%= form.label :notice_period_in_days %>
-    <%= form.number_field :notice_period_in_days,{:min =>'0'} %>
+    <%= form.number_field :notice_period_in_days,:min =>'0',:pattern=>'\d*' %>
   </div>
 
 
